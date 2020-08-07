@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+{% block metadata %}  {% endblock %}
+  {% block title %}
+    <title> </title>
+  {% endblock %}
+
+  <!-- Enable responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons -->
+  <link href="{% static "blog/img/stp.png" %}" rel="icon" >
+  <link href="{% static "blog/img/apple-touch-icon.png" %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'blog/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static "blog/lib/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+  <link href="{% static "blog/lib/animate/animate.min.css" %}" rel="stylesheet">
+  <link href="{% static "blog/lib/ionicons/css/ionicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "blog/lib/owlcarousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static "blog/css/style.css" %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: EstateAgency
+    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="navbar-brand text-brand" href="{% url 'home' %}">STACK<span class="color-b">PYTHON</span></a>
+      <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+        data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/admin/">Admin</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'regis' %}">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'course_list' %}">Courses</a>
+              <a class="dropdown-item" href="blog-detail.html">Books(Not available Now)</a>
+              <a class="dropdown-item" href="agents-grid.html">Gadgets(Not available Now)</a>
+              <a class="dropdown-item" href="{% url 'show_vimeo' %}">Free Course(Video)</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+
+   {% block content %}
+
+   {% endblock %}
+
+  <!--/ footer Star /-->
+  <section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">STACKPYTHON</h3>
+            </div>
+            <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                All stacks in Python programming language.
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">Focusing On</h3>
+            </div>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Web Development(Not available Now)</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Data Science(Not available Now)</a>
+                  </li>
+                    <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Python Fundamentals(Not available Now)</a>
+                  </li>
+                    <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">More coming soon </a>
+                  </li>
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">Our Partners</h3>
+            </div>
+            <div class="w-body-a">
+              <ul class="list-unstyled">
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="#">Waiting for partners</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/Stackpython-110041290379079/?modal=admin_todo_tour">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://medium.com/@stackpython">
+                  <i class="fa fa-medium" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              &copy; Copyright
+              <span class="color-a">2020</span> STACKPYTHON
+            </p>
+          </div>
+          <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
+            -->
+             <a href="https://bootstrapmade.com/">Some Rights Reserved.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ Footer End /-->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static "blog/lib/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "blog/lib/jquery/jquery-migrate.min.js" %}"> </script>
+  <script src="{% static "blog/lib/popper/popper.min.js" %}"></script>
+  <script src="{% static "blog/lib/bootstrap/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "blog/lib/easing/easing.min.js" %}"> </script>
+  <script src="{% static "blog/lib/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "blog/lib/scrollreveal/scrollreveal.min.js" %}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static "blog/contactform/contactform.js" %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static "blog/js/main.js" %}"></script>
+
+</body>
+</html>

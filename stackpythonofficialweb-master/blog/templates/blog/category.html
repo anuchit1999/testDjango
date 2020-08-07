@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    <title> Category </title>
+{% endblock %}
+
+{% block content %}
+    {% for data in ct %}
+     <p> {{ data.cate_name }}</p>
+        <p> <a href="{% url 'category_detail' %}"> {{ data.cate_url }} </a> </p>
+    {% endfor %}
+{% endblock %}

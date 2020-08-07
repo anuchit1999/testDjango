@@ -1,0 +1,93 @@
+{% extends 'blog/base.html' %}
+{% load social_share %}
+
+
+{% block title %}
+    <title> {% if bd %} {{ bd.title }} {% endif %}
+    </title>
+{% endblock %}
+<!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+{% block content %}
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">{% if bd %}{{ bd.title }}{% endif %}</h1>
+            <span class="color-text-a">S T A C K P Y T H O N</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+  <!--/ News Single Star /-->
+  <section class="news-single nav-arrow-b">
+    <div class="container">
+        {% if bd %}
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <div class="post-information">
+            <ul class="list-inline text-center color-a">
+              <li class="list-inline-item mr-2">
+                <strong> <i class="fa fa-user" aria-hidden="true"></i> </strong>
+                <span class="color-text-a">
+                    {{ bd.user }}
+                </span>
+              </li>
+              <li class="list-inline-item mr-2">
+                <strong> <i class="fa fa-tag" aria-hidden="true"></i> </strong>
+                <span class="color-text-a">
+                    {{bd.category}}
+                </span>
+              </li>
+              <li class="list-inline-item mr-2">
+                  <strong> <i class="fa fa-pencil" aria-hidden="true"></i> </strong>
+                <span class="color-text-a">{{bd.date_updated}}</span>
+              </li>
+              <li class="list-inline-item">
+                <strong> <i class="fa fa-calendar" aria-hidden="true"></i> </strong>
+                <span class="color-text-a">
+                    {{bd.date_pub}}
+                </span>
+              </li>
+            </ul> <br>
+            <div class="col-sm-12">
+              <div class="news-img-box">
+                <img src="{{bd.cover_pic.url}}" alt="Post1" class="img-fluid">
+              </div>
+            </div> <br>
+            <div class="container">
+                <div style="text-align: center"> {{ bd.content|safe }}</div>
+            </div>
+            {% endif %}
+          </div>
+          <strong> <i class="fa fa-tag" aria-hidden="true"></i> <h5>  <span class="badge badge-dark"> {{bd.tag.all|join:", "}} </span> </h5></strong> <br> <br> <br>
+
+          <div class="container" id="disqus_thread"></div>
+          <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://655622ef-ngrok-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <script id="dsq-count-scr" src="//655622ef-ngrok-io.disqus.com/count.js" async></script>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

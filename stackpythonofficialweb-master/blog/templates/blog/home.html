@@ -1,0 +1,130 @@
+
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} <title> Home </title> {%  endblock %}
+
+
+{% block content %}
+    <br> <br> <br> <br> <br> <br> <br>
+    <!--/ News Grid Star /-->
+  <section class="news-grid grid">
+    <div class="container">
+      <div class="row">
+         {% for data in pst %}
+            <div class="col-md-4">
+              <div class="card-box-b card-shadow news-box">
+                <div class="img-box-b">
+                  <img src="{{ data.cover_pic.url }}" alt="post1" class="img-b img-fluid">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-header-b">
+                    <div class="card-title-b">
+                      <h2 class="title-2">
+                        <a href="/blogdetail/{{ data.id }}">{{ data.title }}
+                        </a>
+                      </h2>
+                    </div>
+                    <div class="card-date">
+                        <span class="date-b"><i class="fa fa-user" aria-hidden="true"></i>
+                            {{ data.user}} | <i class="fa fa-calendar" aria-hidden="true"> </i> &nbsp;{{ data.date_pub }}
+                        </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--/ News Grid End /-->
+  <!--/ Services Star /-->
+  <section class="section-services section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Our Courses</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico">
+                <span class="fa fa-edit"></span>
+              </div>
+              <div class="card-title-c align-self-center">
+                <h2 class="title-c">Training</h2>
+              </div>
+            </div>
+            <div class="card-body-c">
+              <p class="content-c">
+                We have a team that always look to help you reach your goal about learning Python
+                  programming language.
+              </p>
+            </div>
+            <div class="card-footer-c">
+              <a href="#" class="link-c link-icon">Read more(Not available Now)
+                <span class="ion-ios-arrow-forward"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico">
+                <span class="fa fa-desktop"></span>
+              </div>
+              <div class="card-title-c align-self-center">
+                <h2 class="title-c">Web</h2>
+              </div>
+            </div>
+            <div class="card-body-c">
+              <p class="content-c">
+                We are excellent at Web Development including building websites, web applications, IoT monitoring, and
+                  chat bot.
+              </p>
+            </div>
+            <div class="card-footer-c">
+              <a href="#" class="link-c link-icon">Read more(Not available Now)
+                <span class="ion-ios-arrow-forward"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico">
+                <span class="fa fa-cart-arrow-down"></span>
+              </div>
+              <div class="card-title-c align-self-center">
+                <h2 class="title-c">Product</h2>
+              </div>
+            </div>
+            <div class="card-body-c">
+              <p class="content-c">
+                We also sell various products and services to fulfill your needs, e.g. chat bot, books,
+                  dashboard analytics, etc.
+              </p>
+            </div>
+            <div class="card-footer-c">
+              <a href="#" class="link-c link-icon">Read more(Not available Now)
+                <span class="ion-ios-arrow-forward"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Services End /-->
+
+
+{% endblock %}

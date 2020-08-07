@@ -1,0 +1,89 @@
+
+{% extends 'djangomatlab/base.html' %}
+{% block title %}
+    <title> Home </title>
+{% endblock %}
+
+
+{% block content %}
+            <div class="row" xmlns="http://www.w3.org/1999/html">
+                    {% for Post in my_blog_obj %}
+                  <div class="col-sm-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ Post.title }}</h5>
+                        <img src="{{ Post.photo.url }}" alt="{{ Post.title }}" width="350px" height="300px" class="center">
+
+                        <p class="card-text">{{ Post.date_published }}</p>
+
+                        <a class="btn btn-primary"
+                           href="/readpost/{{ Post.id }}">Continue Reading
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                    {%  endfor %}
+                </div>
+            <br> <br> <br> <br>
+
+               <h1 style="font-weight: bold; text-align: center"> W &nbsp; O &nbsp; R &nbsp; L &nbsp; D &nbsp;&nbsp;&nbsp;   C &nbsp;L &nbsp; I &nbsp;M &nbsp; A &nbsp;T &nbsp;E </h1>
+
+           <br>
+
+        <div class="row">
+            <div class="align-items: center">
+                <div class="card border-light mb-1" style="max-width: 20rem; align-content: center">
+                      <div class="card-header">Weather Today</div>
+                      <div class="card-body text-secondary">
+                        <h5 class="card-title">{{ weather.city }}, Serbia</h5>
+                        <p class="card-text">{{ weather.temperature }} Celsius</p>
+                          <div class="media-left">
+                            <figure class="image is-50x50">
+                                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                            </figure>
+                        </div>
+                          <p class="card-text">{{ weather.description }}</p>
+                      </div>
+
+                </div>
+            </div>
+
+            <div class="align-items: center">
+                <div class="card border-light mb-1" style="max-width: 20rem; align-content: center">
+                      <div class="card-header">Weather Today</div>
+                      <div class="card-body text-secondary">
+                        <h5 class="card-title">{{ weather2.city2 }}, Thailand</h5>
+                        <p class="card-text">{{ weather2.temperature2 }} Celsius</p>
+                          <div class="media-left">
+                            <figure class="image is-50x50">
+                                <img src="http://openweathermap.org/img/w/{{ weather2.icon2 }}.png" alt="Image">
+                            </figure>
+                        </div>
+                          <p class="card-text">{{ weather2.description2 }}</p>
+                      </div>
+
+                </div>
+            </div>
+
+
+            <div class="align-items: center">
+                <div class="card border-light mb-1" style="max-width: 20rem; align-content: center">
+                      <div class="card-header">Weather Today</div>
+                      <div class="card-body text-secondary">
+                        <h5 class="card-title">{{ weather3.city3 }}, Laos</h5>
+                        <p class="card-text">{{ weather3.temperature3 }} Celsius</p>
+                          <div class="media-left">
+                            <figure class="image is-50x50">
+                                <img src="http://openweathermap.org/img/w/{{ weather3.icon3 }}.png" alt="Image">
+                            </figure>
+                        </div>
+                          <p class="card-text">{{ weather3.description3 }}</p>
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    <br>
+    <h2 style="text-align: center; color: #8c1515;">Welcome, {{ user.username }}!</h2>
+{% endblock %}

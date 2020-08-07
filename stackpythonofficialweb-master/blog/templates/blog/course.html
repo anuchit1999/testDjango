@@ -1,0 +1,76 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+ <!--/ Property Star /-->
+  <section class="section-property section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Latest Courses</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="property-carousel" class="owl-carousel owl-theme">
+        {% for data in cl %}
+        <div class="carousel-item-b">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="{{ data.course_photo.url }}" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="/coursedetail/{{ data.id }}">{{data.course_name}}</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">Price | $ {{data.price}}</span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title"></h4> Date:
+                      <span>
+                        {{ data.course_date }}
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Duration</h4>
+                      <span>{{ data.course_duration }}</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+            {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--/ Property End /-->
+{% endblock %}

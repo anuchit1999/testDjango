@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}<title>Example Video</title>{% endblock %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+    <div class="container">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/435735491"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+            </iframe>
+        </div>
+
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <br>
+        <h1 style="font-weight: bolder; text-align: center; color: #8c1515">P Y T H O N  &nbsp; W E B &nbsp;  D E V E L O P M E N T &nbsp;  W I T H  &nbsp; F L A S K</h1>
+    </div>
+{% endblock %}

@@ -1,0 +1,167 @@
+
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title> About </title>
+{% endblock %}
+
+
+{% block content %}
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">All stacks in Python programming language.</h1>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="{% url 'blog_list' %}">Blog</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+  <!--/ About Star /-->
+
+  <section class="section-about">
+    <div class="container">
+
+      <div class="row">
+          {% for pis in pi %}
+        <div class="col-sm-12">
+          <div class="about-img-box">
+            <!-- main_header_cover -->
+            <img src="{{ pis.main_header_cover.url}}" alt="{{ pis.box_name1 }}" class="img-fluid">
+          </div>
+          <div class="sinse-box">
+            <!--<h3 class="sinse-title">{{ pis.box_name1 }}-->
+              <h1 style="color: white; font-family: Arial; font-size: 34px; font-weight: bold">{{ pis.box_name1 }}
+              <span></span>
+              <br>{{ pis.box_name2 }}</h1>
+            <p style="color: white">{{ pis.box_name_small }}</p>
+          </div>
+        </div>
+        <div class="col-md-12 section-t8">
+          <div class="row">
+            <div class="col-md-6 col-lg-5">
+              <!-- sub_header_cover -->
+              <img src="{{ pis.sub_header_cover.url }}" alt="" class="img-fluid">
+                <figcaption style="text-align: center"><a href="https://brianyu.me/"> Outstanding teaching idol; Brian Yu CS50</a></figcaption>
+            </div>
+            <div class="col-lg-2  d-none d-lg-block">
+              <div class="title-vertical d-flex justify-content-start">
+                <span>STACKPYTHON</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-5 section-md-t3">
+              <div class="title-box-d">
+                <h3 class="title-d">All
+                  <span class="color-d">Stacks</span> in
+                  <br> Python Programming Language</h3>
+              </div>
+              <p class="color-text-a">
+               {{ pis.page_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+  <!--/ About End /-->
+  <!--/ Team Star /-->
+  <section class="section-agents section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Meet Our Team</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        {% for team in stf %}
+        <div class="col-md-4">
+          <div class="card-box-d">
+            <div class="card-img-d">
+              <img src="{{ team.staff_pic.url }}" alt="{{ team.staff_name}}" class="img-fluid">
+            </div>
+            <div class="card-overlay card-overlay-hover">
+              <div class="card-header-d">
+                <div class="card-title-d align-self-center">
+                  <h3 class="title-d">
+                    <a href="agent-single.html" class="link-two"> {{ team.staff_name }}
+                       </a>
+                  </h3>
+                </div>
+              </div>
+              <div class="card-body-d">
+                <p class="content-d color-text-a">
+                   {{ team.staff_quote }}
+                </p>
+                <div class="info-agents color-a">
+                  <p>
+                    <strong>Phone: </strong>{{ team.staff_phone}}</p>
+                  <p>
+                    <strong>Email: </strong>{{ team.staff_email }}</p>
+                </div>
+              </div>
+
+              <div class="card-footer-d">
+                <div class="socials-footer d-flex justify-content-center">
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--/ Team End /-->
+{% endblock %}

@@ -1,0 +1,13 @@
+{%  extends 'blog/base.html' %}
+
+{% block title %}<title>Page Not Found</title> {% endblock %}
+
+{% block content %}
+
+        <h1>Sorry, we did not find the page you are requesting</h1>
+        <p>
+            Try our course to enjoy learning
+            <a href="{% url 'course_list' %}">premium course</a>
+        </p>
+
+{% endblock %}

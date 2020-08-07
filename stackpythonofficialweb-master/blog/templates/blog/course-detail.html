@@ -1,0 +1,139 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+          {% if cd %}
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">{{cd.course_name}}</h1>
+            <span class="color-text-a">STACKPYTHON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+  <!--/ Property Single Star /-->
+  <section class="property-single nav-arrow-b">
+    <div class="container">
+      <div class="row">
+          <div class="card weather-card">
+              <!-- Card content -->
+              <div class="card-body pb-3">
+                <!--<div class="img-rounded center-block">-->
+                  <img src="{{ cd.course_photo.url }}" alt="{{ cd.course_name }}" class="img-fluid">
+                </div>
+              </div>
+          </div>
+        <div class="col-sm-12">
+          <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+            <!--<div class="carousel-item-b">-->
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-md-5 col-lg-4">
+              <div class="property-price d-flex justify-content-center foo">
+                <div class="card-header-c d-flex">
+                  <div class="card-box-ico">
+                    <span class="ion-money">$</span>
+                  </div>
+                  <div class="card-title-c align-self-center">
+                    <h5 class="title-c">{{cd.price}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="property-summary">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="title-box-d section-t4">
+                      <h3 class="title-d">Course Summary</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="summary-list">
+                  <ul class="list">
+                    <li class="d-flex justify-content-between">
+                      <strong>Course Name</strong>
+                      <span>{{cd.course_name}}</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Length</strong>
+                      <span>{{cd.course_duration}}</span>
+                    </li>
+                     <li class="d-flex justify-content-between">
+                      <strong>Start Date</strong>
+                      <span>{{cd.course_date}}</span>
+                     </li>
+                     <li class="d-flex justify-content-between">
+                      <strong>End Date</strong>
+                      <span>{{cd.end_date}}</span>
+                     </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-lg-7 section-md-t3">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d">Course Description</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="property-description">
+                <p class="description color-text-a">
+                  {{cd.course_info|safe}}
+                </p>
+              </div>
+              <div class="row section-t3">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d">Skills Required</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="amenities-list color-text-a">
+                <ul class="list-a no-margin">
+                  <li>ฺBasic Python</li>
+                  <li>ฺBasic HTML</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+          {% endif %}
+      </div>
+    </div>
+  </section> <br> <br> <br> <br> <br>
+  <!--/ Property Single End /-->
+
+<div class="container" id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://655622ef-ngrok-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//655622ef-ngrok-io.disqus.com/count.js" async></script>
+{% endblock %}

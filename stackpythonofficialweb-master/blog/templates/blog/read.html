@@ -1,0 +1,18 @@
+{% extends 'djangomatlab/baseregister.html' %}
+{% block title %} <title> Post </title> {% endblock %}
+
+{% block content %}
+    {% if blog_obj2 %}
+        <h1> {{ blog_obj2.title }}</h1>
+        <h6 style="font-weight: lighter"> Date Created: {{ blog_obj2.date_published }} </h6>
+        <h6 style="font-weight: lighter"> Date Updated: {{ blog_obj2.date_updated }} </h6>
+
+        <br>
+        <p> {{ blog_obj2.post|safe }} </p>
+    {% endif %}
+
+{% endblock %}
+
+
+
+
